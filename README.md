@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokemon Explorer
 
-## Getting Started
+## Overview
+Pokemon Explorer is a Next.js application that allows users to browse and search for Pokémon using the PokeAPI. It provides detailed information about each Pokémon, including abilities, types, stats, and moves. The app includes pagination, search functionality, and optimized UI with Tailwind CSS.
 
-First, run the development server:
+## Features
+- List all Pokémon with images and names
+- Search Pokémon by name
+- Click on a Pokémon to view detailed information
+- Pagination for navigating through Pokémon list
+- Optimized UI using Tailwind CSS
+- Uses Next.js dynamic routing for individual Pokémon pages
+- Optimized image loading using `next/image`
 
+## Tech Stack
+- **Next.js** (React framework)
+- **JavaScript**
+- **Tailwind CSS** (for styling)
+- **PokeAPI** (for fetching Pokémon data)
+
+## Installation and Setup
+Follow these steps to run the project locally:
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/pokemon-explorer.git
+cd pokemon-explorer
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Configure `next.config.js`
+Add the following configuration to `next.config.js` to allow external image fetching:
+```js
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+      },
+    ],
+  },
+};
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Start the Development Server
+```bash
+npm run dev
+```
+The app will run at `http://localhost:3000`
 
-## Learn More
+## Project Structure
+```
+/pokemon-explorer
+├── components/        # Reusable components like PokemonCard, SearchBar, Pagination,Pokemon Grid,Loader
+├── pages/
+│   ├── index.js       # Homepage listing all Pokémon
+│   ├── pokemon/[id].js # Dynamic route for individual Pokémon details
+│   ├── _app.js        # Next.js app entry
+├── styles/            # Global Tailwind CSS styles
+├── next.config.js     # Next.js configuration for remote images
+├── package.json       # Dependencies and scripts
+└── README.md          # Project documentation
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Build and Deploy
+To create a production build:
+```bash
+npm run build
+```
+To start the production server:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deployment
+You can deploy this app easily on platforms like **Vercel** or **Netlify**.
+For Vercel:
+```bash
+vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API Usage
+This project fetches Pokémon data from **PokeAPI** (`https://pokeapi.co/api/v2/pokemon`).
 
-## Deploy on Vercel
+- Fetch Pokémon list:
+  ```js
+  const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+  ```
+- Fetch individual Pokémon details:
+  ```js
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
+- Ensure that you have **Node.js** installed before running the project.
+- Make sure to configure `next.config.js` to allow external image sources.
+- If you experience styling issues, ensure Tailwind CSS is properly installed and configured.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is open-source and available for personal or commercial use.
+
+## Author
+Developed by **Aryan Sharma**. Contributions are welcome!
+
+## Contact
+
+For any queries, reach out to me at aryan2301s@gmail.com
+
