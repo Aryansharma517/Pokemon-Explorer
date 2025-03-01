@@ -84,6 +84,11 @@ For Vercel:
 vercel
 ```
 
+###Deployed URL
+
+[You can access the deployed version of this project at:
+Pokemon Explorer on Vercel](https://pokemon-explorer-cot9-git-main-aryan-sharmas-projects-e5f74afd.vercel.app)
+
 ## API Usage
 This project fetches Pokémon data from **PokeAPI** (`https://pokeapi.co/api/v2/pokemon`).
 
