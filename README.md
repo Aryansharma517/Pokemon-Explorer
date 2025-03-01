@@ -84,7 +84,7 @@ For Vercel:
 vercel
 ```
 
-###Deployed URL
+### Deployed URL
 
 [You can access the deployed version of this project at:
 Pokemon Explorer on Vercel](https://pokemon-explorer-cot9-git-main-aryan-sharmas-projects-e5f74afd.vercel.app)
