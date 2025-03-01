@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import PokemonGrid from "@/components/PokemonGrid";
 import SearchBar from "@/components/SearchBar";
 import Loader from "@/components/Loader";
