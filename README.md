@@ -23,7 +23,7 @@ Follow these steps to run the project locally:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/pokemon-explorer.git
+git clone https://github.com/Aryansharma517/Pokemon-Explorer.git
 cd pokemon-explorer
 ```
 
